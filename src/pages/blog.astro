@@ -1,7 +1,101 @@
+---
+import '../styles/blog.css'
+import post1 from './posts/newdays.md'
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARBHOUSE</title>
+    
+</head>
 <body>
-		<a href="/">MAIN</a>
-		<a href="/about/">ABOUT</a>
-        <a href="/blog">BLOG</a>
-		<h1>Astro</h1>
-		<h1>Helloworld!</h1>
-	</body>
+    <!-- 顶部导航 -->
+    <header>
+      <!--   <div class="container nav">
+            <a class="logo">我的博客</a>
+           <div class="nav-menu">
+                <a href="#">首页</a>
+                <a href="#">关于我</a>
+                <a href="#">文章</a>
+                <a href="#">留言</a>
+            </div>
+        </div>  -->
+    </header>
+
+    <div class="container">
+        <!-- 主体布局：左侧边栏 + 右侧内容 -->
+        <div class="main-wrapper">
+            <!-- 左侧边栏：博主信息 -->
+            <div class="sidebar">
+                <img src="/res/avat.jpg" alt="avator" class="avatar">
+                <h2>ArByron</h2>
+                <p class="profile-desc">swinging little boat</p>
+            </div>
+
+            <!-- 右侧主体 -->
+            <div class="main-content">
+                <!-- 博客分类选项卡 -->
+                <div class="tab-container">
+                    <div class="tab-header">
+                        <button class="tab-btn active" data-tab="tech">小径</button>
+                        <button class="tab-btn" data-tab="life">密林</button>
+                    </div>
+
+                    <!-- 技术文章分类 -->
+                    <div class="tab-content active" id="tech">
+                        <div class="blog-list">
+                            <div class="blog-card">
+                                <!--<img src="https://picsum.photos/600/400?random=1" alt="博客封面" class="blog-img">-->
+                                <div class="blog-info">
+                                    <a href="../nothing : )" class="blog-title">这里还没有东西！</a>
+                                    <p class="blog-desc">网站搭好了！但是还没整理好要写的东西<br>这里大概会写一些正式的东西，密林是随意一些的（？</p>
+                                    <div class="blog-meta">2026-05</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 生活随笔分类 -->
+                    <div class="tab-content" id="life">
+                        <div class="blog-list">
+                            <div class="blog-card">
+                                <img src="/res/mountain.jpg" alt="博客封面" class="blog-img">
+                                <div class="blog-info">
+                                    <a href="/posts/newdays" class="blog-title">周末登山游记</a>
+                                    <p class="blog-desc">记录一次难忘的登山之旅，感受大自然的美好与治愈。</p>
+                                    <div class="blog-meta">2025-01-04 · 生活记录</div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+        <p>© 2025 我的个人博客 版权所有</p>
+    </footer>
+
+    <!-- 选项卡切换JS -->
+    <script>
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

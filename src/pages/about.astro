@@ -1,10 +1,46 @@
+---
+const pagetitle ="about me";
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const goal =3;
+import Navi from  '../components/navi.astro';
+import Foot from '../components/footer.astro';
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>ARBhouse</title>
+	</head>
+	
 <body>
-		<a href="/">MAIN</a>
-		<a href="/about/">ABOUT</a>
-        <a href="/blog">BLOG</a>
-        <a> nihaoouuu
-            <b>zhelishina</b>
-        </a>
+		<Navi />
 		<h1>Astro</h1>
 		<h1>Helloworld!</h1>
+		<h2>{pagetitle}</h2>
+		<ul>
+  			{skills.map((skill) => <li class ="skills">{skill}</li>)}
+		</ul>
+		{goal==3?<nav>this is 3333</nav>:<nav> </nav>}
+
+
+		<style>
+      h1 {
+        color: rgb(5, 255, 39);
+        font-size: 4rem;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-variant: small-caps;
+		text-decoration: underline;
+      }
+	  .skills{
+		color:rgb(255, 252, 252);
+		font-weight: 100;
+		font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	  }
+    </style>
+	<Foot/>
 	</body>
+</html>
