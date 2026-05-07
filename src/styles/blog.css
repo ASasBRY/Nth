@@ -9,6 +9,7 @@
 
         body {
             background-image: url('/res/mountain.jpg');
+            background-attachment: fixed;
             color: #333;
             line-height: 1.6;
             padding-bottom: 80px;
@@ -68,11 +69,14 @@
             width: 300px;
             /*background-color: #fff;*/
             border-radius: 12px;
+            display: flex;
             padding: 30px;
             text-align: center;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
             position: left;
             top: 100px;
+            flex-direction: column;
+            align-items: center;
         }
 
         .avatar {
@@ -180,7 +184,7 @@
         }
 
         .blog-title:hover {
-            color: #2d8cf0;
+            color: #6f94bb;
         }
 
         .blog-desc {
@@ -222,6 +226,9 @@
                 flex:1;
                 width:100%;
             }
+            .social-card {
+                flex-direction: row;
+            }
         }
 
         @media (max-width: 768px) {
@@ -235,3 +242,78 @@
                 display: inline-block;
             }
         }
+
+
+/* 返回键-*/
+.back-bar {
+    width: 100%;
+    background-color: #ffffff; /* 白色背景 */
+    padding: 12px 24px;        /* 上下12px，左右24px的内边距 */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;       /* 垂直居中 */
+    justify-content: flex-start; /* 靠左对齐 */
+    border-bottom: 1px solid #eaecef; /* 可选：加一条淡淡的底边线，显得更有层次 */
+  }
+
+  /* 按钮本身的样式 */
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 箭头和文字之间的间距 */
+    color: #56728e; /* 配合你上方导航栏的蓝色调 */
+    font-size: 15px;
+    font-weight: 500;
+    padding: 4px 8px;
+    transition: color 0.2s ease;
+}
+
+  /* 鼠标悬浮时的效果 */
+.back-button:hover {
+    color: #2b4561; /* 颜色变深 */
+}
+
+
+/*联系方式*/
+.social-card {
+    background: rgba(255, 255, 255, 1); /* 保持与你原有组件一致的半透明度 */
+    backdrop-filter: blur(10px);        /* 磨砂效果 */
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 40px;                   /* 与上方头像的间距 */
+    width: 200px;                       /* 建议与你左侧头像卡片宽度保持一致 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.social-card h3 {
+    margin-top: auto;
+    font-size: 1.1rem;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.social-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-card ul li {
+    margin: 10px 0;
+}
+
+.social-card ul li a {
+    text-decoration: none;
+    color: #5d5d5d;
+    transition: color 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.social-card ul li a:hover {
+    color: #6f94bb; /* 鼠标悬停变色 */
+}
